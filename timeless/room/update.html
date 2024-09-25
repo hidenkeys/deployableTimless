@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .receipt-container {
+            background-color: #ffffff;
+            padding: 30px;
+            max-width: 600px;
+            margin: 50px auto;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-top: 8px solid #4CAF50; /* Accent color */
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .header img {
+            max-height: 60px;
+            margin-right: 20px;
+        }
+        .header h2 {
+            color: #4CAF50;
+            font-size: 26px;
+            margin: 0;
+        }
+        .details {
+            margin-bottom: 30px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+        .details p {
+            margin: 10px 0;
+            font-size: 16px;
+            color: #555;
+        }
+        .details p strong {
+            color: #333;
+        }
+        .total {
+            font-size: 22px;
+            font-weight: bold;
+            text-align: right;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        .footer {
+            text-align: center;
+            color: #888;
+            font-size: 14px;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+            margin-top: 30px;
+        }
+        .footer p {
+            margin: 5px 0;
+        }
+        .footer a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+<div class="receipt-container">
+    <div class="header">
+        <img src="{{.LogoURL}}" alt="Company Logo">
+        <h2>Updated Payment Receipt</h2>
+    </div>
+    <div class="details">
+        <p><strong>Customer Name:</strong> {{.CustomerName}}</p>
+        <p><strong>Receipt Number:</strong> {{.ReceiptNumber}}</p>
+        <p><strong>Transaction Date:</strong> {{.TransactionDate}}</p>
+        <p><strong>Payment Method:</strong> {{.PaymentMethod}}</p>
+        <p><strong>Start Date:</strong> {{.EndDate}}</p>
+        <p><strong>End Date:</strong> {{.StartDate}}</p>
+        <p><strong>Number of Nights:</strong> {{.NumberOfNights}}</p>
+        <p><strong>Amount Paid:</strong> ₦{{.AmountPaid}}</p>
+    </div>
+    <p class="total">Total: ${{.AmountPaid}}</p>
+    <div class="footer">
+        <p>Thank you for your business, {{.CustomerName}}!</p>
+        <p>If you have any questions, feel free to contact us at <a href="mailto:support@example.com">support@example.com</a>.</p>
+    </div>
+</div>
+</body>
+</html>
